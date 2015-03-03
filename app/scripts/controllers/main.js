@@ -8,10 +8,14 @@
  * Controller of the waterintakeApp
  */
 angular.module('waterintakeApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope,$timeout, MapService) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $timeout(function(){MapService.iniate();});
+
+
+
   });
