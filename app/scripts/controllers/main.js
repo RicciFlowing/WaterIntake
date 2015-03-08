@@ -32,8 +32,8 @@ angular.module('waterintakeApp')
 
     $timeout(function(){
       MapService.iniate($scope.user);
-      MapService.drawUser($scope.user);
-      MapService.drawIntake($scope.intakes);
+      MapService.drawUser();
+      MapService.drawIntakes($scope.intakes);
     });
 
 

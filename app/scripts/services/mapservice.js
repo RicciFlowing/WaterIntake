@@ -14,7 +14,7 @@ angular.module('waterintakeApp')
 
       iniate: function(user){
 
-
+          this.user = user;
         	// set up the map
         	this.map = new L.Map('map');
 
@@ -27,7 +27,7 @@ angular.module('waterintakeApp')
         	this.map.setView(new L.LatLng(user.lat, user.long),14);
         	this.map.addLayer(osm);
         },
-      drawIntake: function( intakes ){
+      drawIntakes: function( intakes ){
                     _.each (intakes, function(intake, index, list) {
                           L.marker([intake.lat, intake.long])
                             .addTo(this.map)
@@ -35,11 +35,17 @@ angular.module('waterintakeApp')
                     }, this);
         },
 
-      drawUser: function(user){
-                  var marker = L.marker([user.lat, user.long]).addTo(this.map)
-                    .bindPopup('<b>'+user.name+'</b>');
-                  //marker.dragging.enable();
-                  }
+      drawUser: function(){
+                   L.marker([this.user.lat, this.user.long]).addTo(this.map)
+                    .bindPopup('<b>'+this.user.name+'</b>');
+
+                },
+      drawEditMarker: function(){
+                  this.editMarker = L.marker([this.user.lat, this.user.long-0.01]).addTo(this.map)
+                    .bindPopup('<b>Locate me!</b>').openPopup();
+                    this.editMarker.dragging.enable();
+                }
+
 
       };
   });
