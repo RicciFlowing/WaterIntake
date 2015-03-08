@@ -28,11 +28,18 @@ angular.module('waterintakeApp')
         	this.map.addLayer(osm);
         },
       drawIntake: function( intakes ){
-        _.each (intakes, function(intake, index, list) {
-        L.marker([intake.lat, intake.long])
-       .addTo(this.map)
-        .bindPopup('<b>'+intake.location+'</b> <br> <p> Type: '+ intake.type +' </p>');
-    }, this);
-      }
-    };
+                    _.each (intakes, function(intake, index, list) {
+                          L.marker([intake.lat, intake.long])
+                            .addTo(this.map)
+                            .bindPopup('<b>'+intake.location+'</b> <br> <p> Type: '+ intake.type +' </p>');
+                    }, this);
+        },
+
+      drawUser: function(user){
+                  var marker = L.marker([user.lat, user.long]).addTo(this.map)
+                    .bindPopup('<b>'+user.name+'</b>');
+                  //marker.dragging.enable();
+                  }
+
+      };
   });
