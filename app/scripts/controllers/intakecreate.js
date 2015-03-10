@@ -31,8 +31,8 @@ angular.module('waterintakeApp')
       };
 
       $scope.newIntake = {
-        location: "Enter location",
-        type: " "
+        location: "",
+        type: "underground"
       };
 
        $scope.addIntake = function (){
