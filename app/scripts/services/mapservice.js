@@ -44,7 +44,13 @@ angular.module('waterintakeApp')
                   this.editMarker = L.marker([this.user.lat, this.user.long-0.01]).addTo(this.map)
                     .bindPopup('<b>Locate me!</b>').openPopup();
                     this.editMarker.dragging.enable();
-                }
+                },
+      getEditMarkerLat: function(){
+              return this.editMarker.getLatLng().lat;
+      },
+      getEditMarkerLng: function(){
+              return this.editMarker.getLatLng().lng;
+      }
 
 
       };

@@ -30,6 +30,22 @@ angular.module('waterintakeApp')
         long: 13.12
       };
 
+      $scope.newIntake = {
+        location: "Enter location",
+        type: " "
+      };
+
+       $scope.addIntake = function (){
+        this.intakes.push({
+          lat: MapService.getEditMarkerLat(),
+          long: MapService.getEditMarkerLng(),
+          location: this.newIntake.location,
+          type: this.newIntake.type
+        });
+        console.log(this.intakes);
+
+      }
+
     $timeout(function(){
       MapService.iniate($scope.user);
       MapService.drawUser();
