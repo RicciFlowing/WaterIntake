@@ -10,6 +10,8 @@
 angular.module('waterintakeApp')
   .controller('IntakeCreateCtrl', function ($scope, $timeout, MapService) {
 
+    $scope.types = [ {label: 'test1', name: 'overground'}, {label: 'test2', name: 'underground'}];
+
     $scope.intakes = [
       {
         lat: 54.27 ,
@@ -31,8 +33,8 @@ angular.module('waterintakeApp')
       };
 
       $scope.newIntake = {
-        location: "",
-        type: "underground"
+        location: '',
+        type:'underground'
       };
 
        $scope.addIntake = function (){
@@ -44,7 +46,7 @@ angular.module('waterintakeApp')
         });
         console.log(this.intakes);
 
-      }
+      };
 
     $timeout(function(){
       MapService.iniate($scope.user);
