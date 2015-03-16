@@ -8,7 +8,21 @@
 
 
   <div ng-repeat='intake in intakes' class='row'>
-    <h3> {{intake.location}}  </h3>
-    <div class='col-sm-2'>Type: </div> <div class='col-sm-10'> <span class="label label-default"> {{intake.type}} </span> </div>
-    <div class='col-sm-2'>Distance: </div> <div class='col-sm-10'> {{distance(intake) | distance}}  </div>
+    <div class='col-sm-2 form-group'>
+    <svg width="50" height="50">
+
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refx="2" refy="5" orient="auto">
+            <path d="M2,2 L2,11 L10,6 L2,2" style="fill:blue;" />
+        </marker>
+    </defs>
+
+    <path d="M{{25-15*direction(intake).y}},{{25+15*direction(intake).x}} L{{25+5*direction(intake).y}},{{25-5*direction(intake).x}}" style="stroke:blue; stroke-width: 2px; fill: none; marker-end: url(#arrow);"/>
+
+    </svg>
+  </div>
+    <div class='col-sm-2 form-group'> {{distance(intake) | distance}}  </div>
+    <div class='col-sm-2 form-group'> {{intake.location}}  </div>
+    <div class='col-sm-6 form-group'> Type: <span class="label label-default"> {{intake.type}} </span> </div>
+
   </div>
