@@ -10,7 +10,16 @@
 angular.module('waterintakeApp')
   .service('MapService', function () {
     return {
+       hydrant: L.icon({
+        iconUrl: '/images/water-hydrant.png',
+        shadowUrl: '/images/marker-shadow.png',
 
+        iconSize:     [40, 50], // size of the icon
+        shadowSize:   [40, 40], // size of the shadow
+        iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+        shadowAnchor: [-10, 4],  // the same for the shadow
+        popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+      }),
 
       iniate: function(user){
 
@@ -28,8 +37,9 @@ angular.module('waterintakeApp')
         	this.map.addLayer(osm);
         },
       drawIntakes: function( intakes ){
+
                     _.each (intakes, function(intake, index, list) {
-                          L.marker([intake.lat, intake.long])
+                          L.marker([intake.lat, intake.long], {icon: this.hydrant})
                             .addTo(this.map)
                             .bindPopup('<b>'+intake.location+'</b> <br> <p> Type: '+ intake.type +' </p>');
                     }, this);
@@ -40,11 +50,13 @@ angular.module('waterintakeApp')
                     .bindPopup('<b>'+this.user.name+'</b>');
 
                 },
+
       drawEditMarker: function(){
-                  this.editMarker = L.marker([this.user.lat, this.user.long-0.01]).addTo(this.map)
+                  this.editMarker = L.marker([this.user.lat, this.user.long-0.01], {icon: this.hydrant}).addTo(this.map)
                     .bindPopup('<b>Locate me!</b>').openPopup();
                     this.editMarker.dragging.enable();
                 },
+
       getEditMarkerLat: function(){
               return this.editMarker.getLatLng().lat;
       },
