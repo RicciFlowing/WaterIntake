@@ -13,7 +13,7 @@ angular.module('waterintakeApp')
        hydrant: L.icon({
         iconUrl: '/images/water-hydrant.png',
         shadowUrl: '/images/marker-shadow.png',
-
+        // HACK: Icon location not fitting!!!
         iconSize:     [40, 50], // size of the icon
         shadowSize:   [40, 40], // size of the shadow
         iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
