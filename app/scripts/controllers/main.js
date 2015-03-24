@@ -8,7 +8,7 @@
  * Controller of the waterintakeApp
  */
 angular.module('waterintakeApp')
-  .controller('MainCtrl', function ($scope,$timeout, MapService, distanceFilter) {
+  .controller('MainCtrl', function ($scope,$timeout, MapService, distanceFilter, typeFilter) {
 
     $scope.intakes = [
       {
