@@ -11,8 +11,8 @@ angular.module('waterintakeApp')
   .controller('MainCtrl', function ($scope,$timeout, MapService, distanceFilter, typeFilter) {
 
     var over = {id:1, name:'overground'};
-    var under = {id:2, name:'underground'}
-    var open = {id:3, name:'open water'}
+    var under = {id:2, name:'underground'};
+    var open = {id:3, name:'open water'};
     $scope.intakes = [
       {
         lat: 54.277 ,
