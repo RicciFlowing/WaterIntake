@@ -13,7 +13,7 @@ angular.module('waterintakeApp')
        hydrant: L.icon({
         iconUrl: '/images/water-hydrant.png',
         shadowUrl: '/images/marker-shadow.png',
-        
+
         iconSize:     [40, 50], // size of the icon
         shadowSize:   [40, 40], // size of the shadow
         iconAnchor:   [20, 50], // point of the icon which will correspond to marker's location
@@ -30,7 +30,7 @@ angular.module('waterintakeApp')
         	// create the tile layer with correct attribution
         	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         	var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-        	var osm = new L.TileLayer(osmUrl, {minZoom: 12, maxZoom: 19, attribution: osmAttrib});
+        	var osm = new L.TileLayer(osmUrl, {minZoom: 14, maxZoom: 19, attribution: osmAttrib});
 
         	// start the map in South-East England
         	this.map.setView(new L.LatLng(user.lat, user.long),14);
