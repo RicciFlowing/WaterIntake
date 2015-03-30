@@ -9,7 +9,7 @@
 <wi-type-select ng-model = "search.type"> </wi-type-select>
 
 
-  <div ng-repeat='intake in intakes | type:search.type' class='row'>
+  <div ng-repeat='intake in intakes | type:search.type | orderBy: distance' class='row'>
     <div class='col-sm-2 form-group'>
     <svg width="50" height="50">
 

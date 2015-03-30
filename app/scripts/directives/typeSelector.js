@@ -10,7 +10,7 @@ angular.module('waterintakeApp')
     },
     link: function(scope, element, attrs, ngModelCtrl){
       var activeType = {};
-      scope.types =  [{id:1, name: 'overground'}, {id:2, name: 'underground'}, {id:1, name: 'open water'}];
+      scope.types =  [{id:1, name: 'overground'}, {id:2, name: 'underground'}, {id:3, name: 'open water'}];
 
       scope.isActive = function(type){
         return activeType && activeType.id === type.id;
@@ -28,9 +28,6 @@ angular.module('waterintakeApp')
       ngModelCtrl.$render = function() {
         activeType = ngModelCtrl.$viewValue;
       }
-    },
-    controller: function($scope){
-      $scope.types = [{id:1, name: 'overground'}, {id:2, name: 'underground'}, {id:1, name: 'open water'}];
     }
       };
   });

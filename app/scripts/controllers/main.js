@@ -12,9 +12,10 @@ angular.module('waterintakeApp')
 
     var over = {id:1, name:'overground'};
     var under = {id:2, name:'underground'}
+    var open = {id:3, name:'open water'}
     $scope.intakes = [
       {
-        lat: 54.27 ,
+        lat: 54.277 ,
         long: 13.121,
         location: 'Mainstreet 16',
         type: over
@@ -24,6 +25,18 @@ angular.module('waterintakeApp')
         long: 13.124,
         location: 'second street 2',
         type: under
+      },
+      {
+        lat: 54.258,
+        long: 13.124,
+        location: 'second  4',
+        type: open
+      },
+      {
+        lat: 54.268,
+        long: 13.134,
+        location: 'first street 7',
+        type: over
       },
       {
         lat: 54.25 ,

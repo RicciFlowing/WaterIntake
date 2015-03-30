@@ -2,7 +2,7 @@
 
 <div class="btn-group" role="group" aria-label="..." >
 
-  <button ng-repeat='type in types' ng-click="toggleType(type)" class="btn btn-default" > {{type.name}} </button>
+  <a ng-repeat='type in types' ng-click="toggleType(type)" class="btn btn-default" ng-Class="{active: isActive(type)}" > {{type.name}} </a>
 </div>
 
 </div>
