@@ -6,10 +6,10 @@
 
 <h2> List of intakes </h2>
 
-<wi-type-select> </wi-type-select>
+<wi-type-select ng-model = "search.type"> </wi-type-select>
 
 
-  <div ng-repeat='intake in intakes ' class='row'>
+  <div ng-repeat='intake in intakes | type:search.type' class='row'>
     <div class='col-sm-2 form-group'>
     <svg width="50" height="50">
 
@@ -29,6 +29,6 @@
   </div>
     <div class='col-sm-2 form-group'> {{distance(intake) | distance}}  </div>
     <div class='col-sm-2 form-group'> {{intake.location}}  </div>
-    <div class='col-sm-6 form-group'> Type: <span class="label label-default"> {{intake.type}} </span> </div>
+    <div class='col-sm-6 form-group'> Type: <span class="label label-default"> {{intake.type.name}} </span> </div>
 
   </div>

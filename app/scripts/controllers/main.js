@@ -10,24 +10,26 @@
 angular.module('waterintakeApp')
   .controller('MainCtrl', function ($scope,$timeout, MapService, distanceFilter, typeFilter) {
 
+    var over = {id:1, name:'overground'};
+    var under = {id:2, name:'underground'}
     $scope.intakes = [
       {
         lat: 54.27 ,
         long: 13.121,
         location: 'Mainstreet 16',
-        type: 'overground'
+        type: over
       },
       {
         lat: 54.268,
         long: 13.124,
         location: 'second street 2',
-        type: 'underground'
+        type: under
       },
       {
         lat: 54.25 ,
         long: 13.1,
         location: 'Far away 19',
-        type: 'overground'
+        type: over
       }];
 
       $scope.user = {

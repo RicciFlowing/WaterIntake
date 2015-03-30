@@ -1,9 +1,8 @@
 <div>
 
- <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default" type="overground"> Overground </button>
-  <button type="button" class="btn btn-default" type="underground"> Underground </button>
-  <button type="button" class="btn btn-default" type="open water"> Open water </button>
+<div class="btn-group" role="group" aria-label="..." >
+
+  <button ng-repeat='type in types' ng-click="toggleType(type)" class="btn btn-default" > {{type.name}} </button>
 </div>
 
 </div>
