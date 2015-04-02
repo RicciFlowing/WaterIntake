@@ -23,15 +23,7 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-          <li><a ng-href="#/locate"> Locate </a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#/contact">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">waterintake</h3>
-      </div>
+    <wi-top-nav> </wi-top-nav>
 
       <div ng-view=""></div>
 
@@ -79,11 +71,13 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/mapservice.js"></script>
+        <script src="scripts/services/mapService.js"></script>
+        <script src="scripts/services/routeService.js"></script>
         <script src="scripts/controllers/intakecreate.js"></script>
         <script src="scripts/filters/distanceFilter.js"></script>
         <script src="scripts/filters/typeFilter.js"></script>
         <script src="scripts/directives/typeSelector.js"></script>
+        <script src="scripts/directives/topNavigation.js"></script>
         <!-- endbuild -->
 </body>
 </html>
