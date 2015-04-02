@@ -1,2 +1,2 @@
 * text=auto
-*.conf linguist-language=Javascript
+app/.htaccess linguist-vendored
