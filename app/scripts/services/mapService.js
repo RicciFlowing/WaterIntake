@@ -41,7 +41,7 @@ angular.module('waterintakeApp')
                     _.each (intakes, function(intake, index, list) {
                           L.marker([intake.lat, intake.long], {icon: this.hydrant})
                             .addTo(this.map)
-                            .bindPopup('<b>'+intake.location+'</b> <br> <p> Type: '+ intake.type +' </p>');
+                            .bindPopup('<b>'+intake.location+'</b> <br> <p> Type: '+ intake.type.name +' </p>');
                     }, this);
         },
 
