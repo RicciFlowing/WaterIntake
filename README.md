@@ -1,4 +1,4 @@
 # WaterIntake
-An Angular app for searching the next water intake for the FireDepartment
+A frontend study for a hydrant finder
 
 
